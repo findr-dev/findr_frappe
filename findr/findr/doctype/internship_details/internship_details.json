@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-09 01:34:55.520422",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "internship_details_section",
+  "internship_experience",
+  "intern_company_name",
+  "intern_position",
+  "column_break_cxhp",
+  "intern_to",
+  "intern_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "internship_details_section",
+   "fieldtype": "Section Break",
+   "label": "Internship Details"
+  },
+  {
+   "fieldname": "column_break_cxhp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "intern_company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "intern_position",
+   "fieldtype": "Data",
+   "label": "Position"
+  },
+  {
+   "default": "0",
+   "fieldname": "internship_experience",
+   "fieldtype": "Check",
+   "label": "Have Internship experience?"
+  },
+  {
+   "fieldname": "intern_to",
+   "fieldtype": "Date",
+   "label": "To"
+  },
+  {
+   "fieldname": "intern_from",
+   "fieldtype": "Date",
+   "label": "From"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-23 13:46:24.858693",
+ "modified_by": "Administrator",
+ "module": "Findr",
+ "name": "Internship Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

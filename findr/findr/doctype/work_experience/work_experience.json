@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-09 02:14:17.562047",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "work_experience",
+  "work_position",
+  "work_company_name",
+  "column_break_nkhf",
+  "work_from",
+  "work_to"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "work_experience",
+   "fieldtype": "Check",
+   "label": "Have work experience?"
+  },
+  {
+   "fieldname": "work_position",
+   "fieldtype": "Data",
+   "label": "Position"
+  },
+  {
+   "fieldname": "work_company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "column_break_nkhf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_from",
+   "fieldtype": "Date",
+   "label": "From"
+  },
+  {
+   "fieldname": "work_to",
+   "fieldtype": "Date",
+   "label": "To"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-23 13:06:00.498453",
+ "modified_by": "Administrator",
+ "module": "Findr",
+ "name": "Work Experience",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

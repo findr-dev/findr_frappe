@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-30 20:13:29.426925",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "course_name",
+  "university",
+  "country",
+  "column_break_cmuv",
+  "scholarship",
+  "deadline",
+  "course_link"
+ ],
+ "fields": [
+  {
+   "fieldname": "course_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Course Name"
+  },
+  {
+   "fieldname": "university",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "University"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Country"
+  },
+  {
+   "fieldname": "column_break_cmuv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "scholarship",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Scholarship"
+  },
+  {
+   "columns": 1,
+   "fieldname": "deadline",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Deadline"
+  },
+  {
+   "fieldname": "course_link",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Course Link"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-27 12:50:29.339905",
+ "modified_by": "Administrator",
+ "module": "Findr",
+ "name": "Courses",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

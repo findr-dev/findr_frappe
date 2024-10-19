@@ -1,0 +1,452 @@
+{
+ "actions": [],
+ "autoname": "STU-.###",
+ "creation": "2024-08-09 00:35:21.673716",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "student_details_section",
+  "naming_series",
+  "first_name",
+  "last_name",
+  "address",
+  "column_break_uoha",
+  "email",
+  "password",
+  "phone_number",
+  "qualification_tab",
+  "school_section",
+  "tenth_data_column",
+  "tenth_institution",
+  "tenth_marks",
+  "tenth_mode_of_study",
+  "twelfth_data_column",
+  "twelfth_institution",
+  "twelfth_marks",
+  "twelfth_mode_of_study",
+  "undergraduate_section",
+  "undergraduation_column",
+  "undergraduate_institution",
+  "undergraduate_marks",
+  "undergraduate_mode_of_study",
+  "postgraduation_column",
+  "postgraduate_institution",
+  "postgraduate_marks",
+  "postgraduate_mode_of_study",
+  "phd_section",
+  "phd_institution",
+  "phd_marks",
+  "phd_mode_of_study",
+  "languages_section",
+  "english_skill",
+  "new_language",
+  "proficiency_in_language",
+  "language_proficiency",
+  "internship_experience_tab",
+  "internship_details",
+  "section_break_kckk",
+  "work_experience",
+  "candidate_preferences_tab",
+  "preferred_course",
+  "column_break_kawi",
+  "preferred_country",
+  "budget_tab",
+  "budget",
+  "scholarship_details_tab",
+  "scholarship_section",
+  "availing_scholarship",
+  "religion",
+  "caste",
+  "additional_details_tab",
+  "career_gap",
+  "nationality",
+  "date_of_birth",
+  "column_break_qgqo",
+  "intake",
+  "year_of_study",
+  "course_list_tab",
+  "course_list",
+  "course_html",
+  "payments_tab",
+  "registration_fee",
+  "course_fee"
+ ],
+ "fields": [
+  {
+   "fieldname": "student_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Data",
+   "label": "Password"
+  },
+  {
+   "fieldname": "qualification_tab",
+   "fieldtype": "Tab Break",
+   "label": "Qualification"
+  },
+  {
+   "fieldname": "internship_experience_tab",
+   "fieldtype": "Tab Break",
+   "label": "Work Experience"
+  },
+  {
+   "fieldname": "tenth_institution",
+   "fieldtype": "Data",
+   "label": "Institution"
+  },
+  {
+   "fieldname": "tenth_marks",
+   "fieldtype": "Data",
+   "label": "Marks"
+  },
+  {
+   "fieldname": "tenth_mode_of_study",
+   "fieldtype": "Select",
+   "label": "Mode of Study",
+   "options": "Full Time\nPart Time\nDistance / Online"
+  },
+  {
+   "fieldname": "twelfth_institution",
+   "fieldtype": "Data",
+   "label": "Institution"
+  },
+  {
+   "fieldname": "twelfth_marks",
+   "fieldtype": "Data",
+   "label": "Marks"
+  },
+  {
+   "fieldname": "twelfth_mode_of_study",
+   "fieldtype": "Select",
+   "label": "Mode of Study",
+   "options": "Full Time\nPart Time\nDistance / Online"
+  },
+  {
+   "fieldname": "undergraduate_section",
+   "fieldtype": "Section Break",
+   "label": "Graduation"
+  },
+  {
+   "fieldname": "undergraduate_institution",
+   "fieldtype": "Data",
+   "label": "Institution"
+  },
+  {
+   "fieldname": "undergraduate_marks",
+   "fieldtype": "Data",
+   "label": "Marks"
+  },
+  {
+   "fieldname": "undergraduate_mode_of_study",
+   "fieldtype": "Select",
+   "label": "Mode of Study",
+   "options": "Full Time\nPart Time\nDistance / Online"
+  },
+  {
+   "fieldname": "internship_details",
+   "fieldtype": "Table",
+   "label": "Internship Details",
+   "options": "Internship Details"
+  },
+  {
+   "fieldname": "candidate_preferences_tab",
+   "fieldtype": "Tab Break",
+   "label": "Candidate Preferences"
+  },
+  {
+   "fieldname": "budget_tab",
+   "fieldtype": "Tab Break",
+   "label": "Budget"
+  },
+  {
+   "fieldname": "additional_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Additional Details"
+  },
+  {
+   "fieldname": "budget",
+   "fieldtype": "Data",
+   "label": "Budget"
+  },
+  {
+   "fieldname": "scholarship_section",
+   "fieldtype": "Section Break",
+   "label": "Scholarship"
+  },
+  {
+   "default": "0",
+   "fieldname": "availing_scholarship",
+   "fieldtype": "Check",
+   "label": "Availing Scholarship"
+  },
+  {
+   "fieldname": "religion",
+   "fieldtype": "Data",
+   "label": "Religion"
+  },
+  {
+   "fieldname": "caste",
+   "fieldtype": "Data",
+   "label": "Caste"
+  },
+  {
+   "fieldname": "languages_section",
+   "fieldtype": "Section Break",
+   "label": "Languages"
+  },
+  {
+   "default": "0",
+   "fieldname": "proficiency_in_language",
+   "fieldtype": "Check",
+   "label": "Proficiency in Language?"
+  },
+  {
+   "fieldname": "language_proficiency",
+   "fieldtype": "Table",
+   "label": "Language Proficiency",
+   "options": "Language Proficiency"
+  },
+  {
+   "fieldname": "postgraduate_institution",
+   "fieldtype": "Data",
+   "label": "Institution"
+  },
+  {
+   "fieldname": "postgraduate_marks",
+   "fieldtype": "Data",
+   "label": "Marks"
+  },
+  {
+   "fieldname": "postgraduate_mode_of_study",
+   "fieldtype": "Select",
+   "label": "Mode of Study",
+   "options": "Full Time\nPart Time\nDistance / Online"
+  },
+  {
+   "fieldname": "phd_section",
+   "fieldtype": "Section Break",
+   "label": "PhD"
+  },
+  {
+   "fieldname": "phd_institution",
+   "fieldtype": "Data",
+   "label": "Institution"
+  },
+  {
+   "fieldname": "phd_marks",
+   "fieldtype": "Data",
+   "label": "Marks"
+  },
+  {
+   "fieldname": "phd_mode_of_study",
+   "fieldtype": "Select",
+   "label": "Mode of Study",
+   "options": "Full Time\nPart Time\nDistance / Online"
+  },
+  {
+   "default": "0",
+   "fieldname": "english_skill",
+   "fieldtype": "Check",
+   "label": "Good English communication skills?"
+  },
+  {
+   "default": "0",
+   "fieldname": "new_language",
+   "fieldtype": "Check",
+   "label": "Wish to learn new language?"
+  },
+  {
+   "fieldname": "section_break_kckk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "work_experience",
+   "fieldtype": "Table",
+   "label": "Work Experience",
+   "options": "Work Experience"
+  },
+  {
+   "fieldname": "column_break_uoha",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "unique": 1
+  },
+  {
+   "fieldname": "scholarship_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Scholarship Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "career_gap",
+   "fieldtype": "Check",
+   "label": "Career Gap"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "intake",
+   "fieldtype": "Data",
+   "label": "Intake"
+  },
+  {
+   "fieldname": "year_of_study",
+   "fieldtype": "Data",
+   "label": "Year of Study"
+  },
+  {
+   "fieldname": "course_list_tab",
+   "fieldtype": "Tab Break",
+   "label": "Course List"
+  },
+  {
+   "fieldname": "school_section",
+   "fieldtype": "Section Break",
+   "label": "School"
+  },
+  {
+   "fieldname": "tenth_data_column",
+   "fieldtype": "Column Break",
+   "label": "Tenth Data"
+  },
+  {
+   "fieldname": "twelfth_data_column",
+   "fieldtype": "Column Break",
+   "label": "Twelfth Data"
+  },
+  {
+   "fieldname": "undergraduation_column",
+   "fieldtype": "Column Break",
+   "label": "Undergraduation"
+  },
+  {
+   "fieldname": "postgraduation_column",
+   "fieldtype": "Column Break",
+   "label": "Postgraduation"
+  },
+  {
+   "fieldname": "column_break_qgqo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "course_list",
+   "fieldtype": "Table",
+   "label": "Course List",
+   "options": "Courses"
+  },
+  {
+   "fieldname": "course_html",
+   "fieldtype": "HTML",
+   "label": "Course HTML"
+  },
+  {
+   "fieldname": "preferred_course",
+   "fieldtype": "Data",
+   "label": "Preferred Course"
+  },
+  {
+   "fieldname": "column_break_kawi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "preferred_country",
+   "fieldtype": "Data",
+   "label": "Preferred Country"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payments_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payments"
+  },
+  {
+   "default": "0",
+   "fieldname": "registration_fee",
+   "fieldtype": "Check",
+   "label": "Registration Fee"
+  },
+  {
+   "default": "0",
+   "fieldname": "course_fee",
+   "fieldtype": "Check",
+   "label": "Course Fee"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-27 12:37:00.475043",
+ "modified_by": "Administrator",
+ "module": "Findr",
+ "name": "Student",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Student",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -14,6 +14,10 @@
   "email",
   "password",
   "phone_number",
+  "gender",
+  "marital_status",
+  "availing_spouse_visa",
+  "have_kids",
   "qualification_tab",
   "school_section",
   "tenth_data_column",
@@ -174,7 +178,7 @@
   {
    "fieldname": "candidate_preferences_tab",
    "fieldtype": "Tab Break",
-   "label": "Candidate Preferences"
+   "label": "Preferences"
   },
   {
    "fieldname": "budget_tab",
@@ -410,11 +414,34 @@
    "fieldname": "course_fee",
    "fieldtype": "Check",
    "label": "Course Fee"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "Married\nSingle\nDivorced"
+  },
+  {
+   "default": "0",
+   "fieldname": "availing_spouse_visa",
+   "fieldtype": "Check",
+   "label": "Availing Spouse Visa"
+  },
+  {
+   "default": "0",
+   "fieldname": "have_kids",
+   "fieldtype": "Check",
+   "label": "Have Kids?"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-27 12:37:00.475043",
+ "modified": "2024-11-20 07:58:26.520298",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",

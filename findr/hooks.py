@@ -234,3 +234,5 @@ app_include_js = "findr.bundle.js"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+website_route_rules = [{'from_route': '/counsellor/<path:app_path>', 'to_route': 'counsellor'},]

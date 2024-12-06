@@ -5,11 +5,8 @@ import razorpay
 import json
 from frappe import _
 
-# secret_id = frappe.get_conf().razorpay_key_id
-# secret_key = frappe.get_conf().razorpay_key_secret
-
-secret_id = 'rzp_test_lDvq7ADMCnmvcz'
-secret_key = '56bnXDCzsaRgSrJs1bdxh1Io'
+secret_id = frappe.get_conf().get(razorpay_key_id)
+secret_key = frappe.get_conf().get(razorpay_key_secret)
 
 @frappe.whitelist(allow_guest=True)
 def create_payment_order(amount,currency='INR'):

@@ -5,8 +5,8 @@ import razorpay
 import json
 from frappe import _
 
-secret_id = frappe.get_conf().razorpay_key_id
-secret_key = frappe.get_conf().razorpay_key_secret
+secret_id = frappe.get_conf().paypal_username
+secret_key = frappe.get_conf().paypal_password
 
 
 @frappe.whitelist(allow_guest=True)

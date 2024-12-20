@@ -23,22 +23,37 @@
   "tenth_data_column",
   "tenth_institution",
   "tenth_marks",
+  "tenth_board_of_study",
+  "tenth_state",
   "tenth_mode_of_study",
   "twelfth_data_column",
+  "currently_studying",
   "twelfth_institution",
+  "twelfth_stream",
   "twelfth_marks",
+  "twelfth_board_of_study",
+  "twelfth_state",
   "twelfth_mode_of_study",
   "undergraduate_section",
   "undergraduation_column",
+  "undergraduate_currently_studying",
+  "undergraduate_course_name",
   "undergraduate_institution",
+  "undergraduate_university",
   "undergraduate_marks",
   "undergraduate_mode_of_study",
   "postgraduation_column",
+  "postgraduate_currently_studying",
+  "postgraduate_course_name",
   "postgraduate_institution",
+  "postgraduate_university",
   "postgraduate_marks",
   "postgraduate_mode_of_study",
   "phd_section",
+  "phd_currently_studying",
+  "phd_course",
   "phd_institution",
+  "phd_university",
   "phd_marks",
   "phd_mode_of_study",
   "languages_section",
@@ -51,11 +66,12 @@
   "section_break_kckk",
   "work_experience",
   "candidate_preferences_tab",
+  "findr_choose",
+  "budget",
+  "section_break_ufwe",
   "preferred_course",
   "column_break_kawi",
   "preferred_country",
-  "budget_tab",
-  "budget",
   "scholarship_details_tab",
   "scholarship_section",
   "availing_scholarship",
@@ -70,10 +86,12 @@
   "year_of_study",
   "course_list_tab",
   "course_list",
-  "course_html",
   "payments_tab",
   "registration_fee",
-  "course_fee"
+  "registration_fee_id",
+  "column_break_ujyu",
+  "course_fee",
+  "course_fee_id"
  ],
  "fields": [
   {
@@ -104,6 +122,7 @@
   {
    "fieldname": "password",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Password"
   },
   {
@@ -179,11 +198,6 @@
    "fieldname": "candidate_preferences_tab",
    "fieldtype": "Tab Break",
    "label": "Preferences"
-  },
-  {
-   "fieldname": "budget_tab",
-   "fieldtype": "Tab Break",
-   "label": "Budget"
   },
   {
    "fieldname": "additional_details_tab",
@@ -374,14 +388,9 @@
    "options": "Courses"
   },
   {
-   "fieldname": "course_html",
-   "fieldtype": "HTML",
-   "label": "Course HTML"
-  },
-  {
    "fieldname": "preferred_course",
    "fieldtype": "Data",
-   "label": "Preferred Course"
+   "label": "Preferred Course / Field"
   },
   {
    "fieldname": "column_break_kawi",
@@ -437,11 +446,114 @@
    "fieldname": "have_kids",
    "fieldtype": "Check",
    "label": "Have Kids?"
+  },
+  {
+   "fieldname": "tenth_board_of_study",
+   "fieldtype": "Data",
+   "label": "Board of Study"
+  },
+  {
+   "fieldname": "tenth_state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "twelfth_board_of_study",
+   "fieldtype": "Data",
+   "label": "Board of Study"
+  },
+  {
+   "fieldname": "twelfth_state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "default": "0",
+   "fieldname": "currently_studying",
+   "fieldtype": "Check",
+   "label": "Currently Studying"
+  },
+  {
+   "fieldname": "twelfth_stream",
+   "fieldtype": "Data",
+   "label": "Stream"
+  },
+  {
+   "default": "0",
+   "fieldname": "undergraduate_currently_studying",
+   "fieldtype": "Check",
+   "label": "Currently Studying"
+  },
+  {
+   "fieldname": "undergraduate_course_name",
+   "fieldtype": "Data",
+   "label": "Course Name"
+  },
+  {
+   "fieldname": "undergraduate_university",
+   "fieldtype": "Data",
+   "label": "University"
+  },
+  {
+   "fieldname": "postgraduate_course_name",
+   "fieldtype": "Data",
+   "label": "Course Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "postgraduate_currently_studying",
+   "fieldtype": "Check",
+   "label": "Currently Studying"
+  },
+  {
+   "fieldname": "postgraduate_university",
+   "fieldtype": "Data",
+   "label": "University"
+  },
+  {
+   "default": "0",
+   "fieldname": "phd_currently_studying",
+   "fieldtype": "Check",
+   "label": "Currently Studying"
+  },
+  {
+   "fieldname": "phd_university",
+   "fieldtype": "Data",
+   "label": "University"
+  },
+  {
+   "fieldname": "phd_course",
+   "fieldtype": "Data",
+   "label": "Course Name"
+  },
+  {
+   "fieldname": "section_break_ufwe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "registration_fee_id",
+   "fieldtype": "Data",
+   "label": "Registration Fee ID"
+  },
+  {
+   "fieldname": "column_break_ujyu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "course_fee_id",
+   "fieldtype": "Data",
+   "label": "Course Fee ID"
+  },
+  {
+   "default": "0",
+   "fieldname": "findr_choose",
+   "fieldtype": "Check",
+   "label": "Findr choose Best Course for them"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-20 07:58:26.520298",
+ "modified": "2024-12-20 13:26:06.446813",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",

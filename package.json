@@ -11,5 +11,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "axios": "^1.7.9",
+    "react-hook-form": "^7.54.1",
+    "react-toastify": "^11.0.2"
+  }
 }

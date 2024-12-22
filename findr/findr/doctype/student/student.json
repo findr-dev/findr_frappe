@@ -67,10 +67,12 @@
   "work_experience",
   "candidate_preferences_tab",
   "findr_choose",
-  "budget",
+  "column_break_hpwn",
   "section_break_ufwe",
+  "education_program",
   "preferred_course",
   "column_break_kawi",
+  "budget",
   "preferred_country",
   "scholarship_details_tab",
   "scholarship_section",
@@ -549,11 +551,20 @@
    "fieldname": "findr_choose",
    "fieldtype": "Check",
    "label": "Findr choose Best Course for them"
+  },
+  {
+   "fieldname": "column_break_hpwn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "education_program",
+   "fieldtype": "Data",
+   "label": "Level of Education Program interested in"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-20 13:26:06.446813",
+ "modified": "2024-12-22 13:38:17.354149",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",
@@ -581,6 +592,18 @@
    "read": 1,
    "report": 1,
    "role": "Student",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Counsellor",
    "share": 1,
    "write": 1
   }

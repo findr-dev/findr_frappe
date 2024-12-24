@@ -58,9 +58,10 @@
   "phd_mode_of_study",
   "languages_section",
   "english_skill",
-  "new_language",
   "proficiency_in_language",
   "language_proficiency",
+  "column_break_wrgk",
+  "new_language",
   "internship_experience_tab",
   "internship_details",
   "section_break_kckk",
@@ -86,14 +87,19 @@
   "column_break_qgqo",
   "intake",
   "year_of_study",
-  "course_list_tab",
-  "course_list",
   "payments_tab",
   "registration_fee",
   "registration_fee_id",
   "column_break_ujyu",
   "course_fee",
-  "course_fee_id"
+  "course_fee_id",
+  "course_list_tab",
+  "course_list",
+  "tab_9_tab",
+  "preferred_location",
+  "consultancy_name",
+  "consultancy_address",
+  "consultancy_number"
  ],
  "fields": [
   {
@@ -560,11 +566,40 @@
    "fieldname": "education_program",
    "fieldtype": "Data",
    "label": "Level of Education Program interested in"
+  },
+  {
+   "fieldname": "column_break_wrgk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_9_tab",
+   "fieldtype": "Tab Break",
+   "label": "Consultancy"
+  },
+  {
+   "fieldname": "preferred_location",
+   "fieldtype": "Data",
+   "label": "Preferred location "
+  },
+  {
+   "fieldname": "consultancy_name",
+   "fieldtype": "Data",
+   "label": "Consultancy Name"
+  },
+  {
+   "fieldname": "consultancy_address",
+   "fieldtype": "Data",
+   "label": "Consultancy Address"
+  },
+  {
+   "fieldname": "consultancy_number",
+   "fieldtype": "Data",
+   "label": "Consultancy Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-22 13:38:17.354149",
+ "modified": "2024-12-24 08:39:18.378056",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",

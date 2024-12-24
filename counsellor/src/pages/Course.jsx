@@ -1,4 +1,4 @@
-// Use updateDoc to update the student
+// DeleteCourse function to be added
 
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -23,7 +23,6 @@ function Course() {
    const { data, isLoading } = useFrappeGetDoc("Student", id);
 
    const onSubmit = (formData) => {
-      console.log(formData);
       const {
          course_name,
          course_deadline,
@@ -47,7 +46,6 @@ function Course() {
       ) {
          const courseListArray = data.course_list;
          courseListArray.push(formData);
-
          updateDoc("Student", id, {
             course_list: courseListArray,
          })
@@ -85,11 +83,9 @@ function Course() {
                </div>
             ) : (
                <div id="courseListContainer" className="flex justify-center">
-                  {data.course_list.map((course) => (
                      <table
-                        key={course.idx}
                         className="table-auto text-white w-full text-xs md:text-base lg:w-4/5 text-center border border-[#0f6990] rounded"
-                     >
+                        >
                         <thead className="bg-[#0f6990]">
                            <tr>
                               <th className="lg:px-10 py-2 w-1/3">
@@ -102,21 +98,22 @@ function Course() {
                            </tr>
                         </thead>
                         <tbody className=" text-[#0f6990]">
-                           <tr>
+                        {data.course_list.map((course,index) => (
+                           <tr key={course.idx}>
                               <td className="py-1">{course.course_name}</td>
                               <td className="py-1">{course.university}</td>
                               <td className="py-1">
                                  <span
                                     className=" flex justify-center align-middle material-symbols-outlined text-red-600 cursor-pointer"
-                                    onClick={() => handleDelete}
+                                    onClick={() => handleDelete(index)}
                                  >
                                     delete_forever
                                  </span>
                               </td>
                            </tr>
+                     ))}
                         </tbody>
                      </table>
-                  ))}
                </div>
             )}
 

@@ -49,6 +49,7 @@ function Course() {
 
          updateDoc("Student", id, {
             course_list: courseListArray,
+            course_added: 1,
          })
             .then(() => toast.success("Course updated"))
             .catch((err) => {

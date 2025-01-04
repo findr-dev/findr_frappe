@@ -583,7 +583,6 @@
    "label": "Consultancy Number"
   },
   {
-   "default": "0",
    "fieldname": "profile_updated",
    "fieldtype": "Data",
    "hidden": 1,
@@ -616,7 +615,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-04 17:58:13.635475",
+ "modified": "2025-01-04 20:00:38.484777",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",

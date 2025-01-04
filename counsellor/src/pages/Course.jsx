@@ -47,9 +47,14 @@ function Course() {
          const courseListArray = data.course_list;
          courseListArray.push(formData);
 
+         const course_added = 0;
+
+         if(data.course_list.length <1) course_added = 0;
+         else course_added = 1;
+
          updateDoc("Student", id, {
             course_list: courseListArray,
-            course_added: 1,
+            course_added
          })
             .then(() => toast.success("Course updated"))
             .catch((err) => {

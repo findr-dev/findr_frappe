@@ -585,7 +585,7 @@
   {
    "default": "0",
    "fieldname": "profile_updated",
-   "fieldtype": "Check",
+   "fieldtype": "Data",
    "hidden": 1,
    "label": "Profile updated"
   },
@@ -616,7 +616,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-04 12:00:13.905060",
+ "modified": "2025-01-04 17:58:13.635475",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",

@@ -1,12 +1,28 @@
 import { useFrappeGetDocList } from "frappe-react-sdk";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function StudentsPage() {
    const navigate = useNavigate();
+   const location = useLocation();
+   const [filters, setFilters] = useState([]);
+
+   useEffect(() => {
+      location.pathname == "/students"
+         ? setFilters([
+              ["registration_fee", "=", "1"],
+              ["course_added", "=", "1"],
+           ])
+         : setFilters([
+              ["registration_fee", "=", "1"],
+              ["course_added", "=", "0"],
+           ]);
+   }, [location]);
+
    const { data, isLoading } = useFrappeGetDocList("Student", {
-      fields: ["*"],
+      fields: ["name","first_name","last_name","education_program"],
+      filters,
    });
-   console.log(data);
 
    return (
       <div className="studentSection container lg:px-24 px-4 py-24">
@@ -15,6 +31,7 @@ function StudentsPage() {
             onClick={() => navigate(-1)}
          >
             &lt; Go back
+            
          </button>
          <h1 className="text-4xl text-[#0f6990] ">Students List</h1>
          {isLoading ? (
@@ -41,7 +58,7 @@ function StudentsPage() {
                               {student.first_name} {student.last_name}
                            </h3>
                            <p className="text-sm text-gray-600 group-hover:text-white">
-                              Looking for UG/PG
+                              Looking for {student.education_program}
                            </p>
                         </div>
                      </div>

@@ -1,43 +1,34 @@
-// get studentList number
-
 import Card from "../components/Card";
-import cardImg1 from "../assets/cardImg1.png";
-import cardImg2 from "../assets/cardImg2.png";
-import {
-   useFrappeGetDoc,
-   useFrappeGetDocCount,
-   useFrappeGetDocList,
-} from "frappe-react-sdk";
-import { useEffect, useState } from "react";
+import { useFrappeGetDocCount } from "frappe-react-sdk";
+import {  useState } from "react";
 
 function Dashboard() {
    const [newlyPaid, setNewlyPaid] = useState({});
-   const [newlyPaidLoading, setNewlyPaidLoading] = useState(true);
    const [existingStudent, setExistingStudent] = useState({});
-   const [existingStudentLoading, setExistingStudentLoading] = useState(true);
-
    const [isLoading, setIsLoading] = useState(true);
-
-   useEffect(() => {
-      if (newlyPaidLoading == false && existingStudentLoading == false) {
-         setIsLoading(false);
-      }
-   }, [newlyPaidLoading, existingStudentLoading]);
 
    const cards = [
       {
          id: "1",
-         image: cardImg1,
+         image: (
+            <span className="material-symbols-outlined text-green-800 text-9xl text-center flex h-full justify-center align-middle">
+               group_add
+            </span>
+         ),
          title: "Students List",
          description: `We have ${newlyPaid} new students`,
-         place: "students/new",
+         location: "students/new",
       },
       {
          id: "2",
-         image: cardImg2,
+         image: (
+            <span className="material-symbols-outlined text-green-800 text-9xl text-center flex h-full justify-center align-middle">
+               partner_exchange
+            </span>
+         ),
          title: "Attended Students",
-         description: `You have attended ${existingStudent} new students`,
-         place: "students",
+         description: `You have given courses to ${existingStudent} students`,
+         location: "students",
       },
    ];
 
@@ -45,11 +36,11 @@ function Dashboard() {
       <div className="container lg:px-24 px-4 py-24 h-dvh">
          <GetNewStudentsCount
             setNewlyPaid={setNewlyPaid}
-            setNewlyPaidLoading={setNewlyPaidLoading}
+            setIsLoading={setIsLoading}
          />
          <GetExisitngStudentsCount
             setExistingStudent={setExistingStudent}
-            setExistingStudentLoading={setExistingStudentLoading}
+            setIsLoading={setIsLoading}
          />
          <div className="title">
             <p className="text-4xl lg:text-5xl  text-[#0f6990]">
@@ -74,36 +65,32 @@ function Dashboard() {
 
 export default Dashboard;
 
-const GetNewStudentsCount = ({ setNewlyPaid, setNewlyPaidLoading }) => {
+const GetNewStudentsCount = ({ setNewlyPaid, setIsLoading }) => {
    const { data, isLoading } = useFrappeGetDocCount("Student", [
-      ["course_fee", "=", "1"],
+      ["registration_fee", "=", "1"],
+      ["course_added", "=", "0"],
    ]);
-   setNewlyPaid(data);
-   if (!isLoading) setNewlyPaidLoading(isLoading);
+
+   if (isLoading) setIsLoading(isLoading);
+   else {
+      setIsLoading(isLoading);
+      setNewlyPaid(data);
+   }
 
    return null;
 };
 
-const GetExisitngStudentsCount = ({
-   setExistingStudent,
-   setExistingStudentLoading,
-}) => {
-   // const { data, isLoading } = useFrappeGetDocCount("Student", [
-   //    ["course_list", "!=", "1"],
-   // ]);
-
+const GetExisitngStudentsCount = ({ setExistingStudent, setIsLoading }) => {
    const { data, isLoading } = useFrappeGetDocCount("Student", [
-      ["course_fee", "=", "1"],
+      ["registration_fee", "=", "1"],
+      ["course_added", "=", "1"],
    ]);
-   console.log(data);
 
-   // if (!isLoading) {
-   //    const sada = data.filter((check) => check.length > 0);
-   //    console.log(sada);
-   // }
-
-   setExistingStudent(data);
-   if (!isLoading) setExistingStudentLoading(isLoading);
+   if (isLoading) setIsLoading(isLoading);
+   else {
+      setIsLoading(isLoading);
+      setExistingStudent(data);
+   }
 
    return null;
 };

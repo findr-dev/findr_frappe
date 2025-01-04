@@ -10,6 +10,7 @@
   "first_name",
   "last_name",
   "address",
+  "profile_updated",
   "column_break_uoha",
   "email",
   "password",
@@ -27,7 +28,7 @@
   "tenth_state",
   "tenth_mode_of_study",
   "twelfth_data_column",
-  "currently_studying",
+  "twelfth_currently_studying",
   "twelfth_institution",
   "twelfth_stream",
   "twelfth_marks",
@@ -68,7 +69,6 @@
   "work_experience",
   "candidate_preferences_tab",
   "findr_choose",
-  "column_break_hpwn",
   "section_break_ufwe",
   "education_program",
   "preferred_course",
@@ -81,7 +81,6 @@
   "religion",
   "caste",
   "additional_details_tab",
-  "career_gap",
   "nationality",
   "date_of_birth",
   "column_break_qgqo",
@@ -94,10 +93,13 @@
   "course_fee",
   "course_fee_id",
   "course_list_tab",
+  "course_added",
   "course_list",
   "tab_9_tab",
+  "consultancy_opted",
   "preferred_location",
   "consultancy_name",
+  "column_break_hvaa",
   "consultancy_address",
   "consultancy_number"
  ],
@@ -330,12 +332,6 @@
    "label": "Scholarship Details"
   },
   {
-   "default": "0",
-   "fieldname": "career_gap",
-   "fieldtype": "Check",
-   "label": "Career Gap"
-  },
-  {
    "fieldname": "nationality",
    "fieldtype": "Data",
    "label": "Nationality"
@@ -476,12 +472,6 @@
    "label": "State"
   },
   {
-   "default": "0",
-   "fieldname": "currently_studying",
-   "fieldtype": "Check",
-   "label": "Currently Studying"
-  },
-  {
    "fieldname": "twelfth_stream",
    "fieldtype": "Data",
    "label": "Stream"
@@ -559,10 +549,6 @@
    "label": "Findr choose Best Course for them"
   },
   {
-   "fieldname": "column_break_hpwn",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "education_program",
    "fieldtype": "Data",
    "label": "Level of Education Program interested in"
@@ -595,11 +581,42 @@
    "fieldname": "consultancy_number",
    "fieldtype": "Data",
    "label": "Consultancy Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "profile_updated",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Profile updated"
+  },
+  {
+   "default": "0",
+   "fieldname": "twelfth_currently_studying",
+   "fieldtype": "Check",
+   "label": "Currently Studying"
+  },
+  {
+   "fieldname": "column_break_hvaa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "consultancy_opted",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Consultancy opted"
+  },
+  {
+   "default": "0",
+   "fieldname": "course_added",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Course added"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-24 08:39:18.378056",
+ "modified": "2025-01-04 12:00:13.905060",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",

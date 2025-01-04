@@ -2,13 +2,13 @@ import { useNavigate } from "react-router-dom";
 
 function Card({ card }) {
    const navigate = useNavigate();
-   const { id, image, title, description, place } = card;
+   const { id, image, title, description, location } = card;
 
    return (
       <div className="card w-full lg:w-2/6 rounded-2xl shadow-2xl p-8 lg:p-12 mt-12 cursor-pointer hover:translate-x hover:scale-105 transition ease-in-out duration-300">
          <div className="cardHeading">
-            <div className="h-56">
-               <img className="h-full object-contain" src={image} alt="asda" />
+            <div className="h-40">
+               {image}
             </div>
          </div>
          <div className="cardBody">
@@ -21,7 +21,7 @@ function Card({ card }) {
             <div className="cardAction flex justify-center">
                <button
                   className="w-full text-white mt-2 py-2 shadow-lg rounded-xl bg-[#0f6990]"
-                  onClick={() => navigate(`/${place}`)}
+                  onClick={() => navigate(`/${location}`)}
                >
                   Go to &gt;
                </button>

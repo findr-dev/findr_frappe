@@ -48,7 +48,7 @@
   "undergraduate_year",
   "postgraduation_column",
   "postgraduate_currently_studying",
-  "postgraduate_course_name",
+  "postgraduate_course",
   "postgraduate_institution",
   "postgraduate_university",
   "postgraduate_marks",
@@ -63,11 +63,11 @@
   "phd_mode_of_study",
   "phd_year",
   "languages_section",
-  "english_skill",
-  "proficiency_in_language",
   "language_proficiency",
   "column_break_wrgk",
+  "english_skill",
   "new_language",
+  "proficiency_in_language",
   "internship_experience_tab",
   "internship_details",
   "section_break_kckk",
@@ -498,11 +498,6 @@
    "label": "University"
   },
   {
-   "fieldname": "postgraduate_course_name",
-   "fieldtype": "Data",
-   "label": "Course Name"
-  },
-  {
    "default": "0",
    "fieldname": "postgraduate_currently_studying",
    "fieldtype": "Check",
@@ -641,11 +636,16 @@
    "fieldname": "phd_year",
    "fieldtype": "Data",
    "label": "Year of passing"
+  },
+  {
+   "fieldname": "postgraduate_course",
+   "fieldtype": "Data",
+   "label": "Course Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-07 16:24:42.254446",
+ "modified": "2025-01-07 23:57:39.738978",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",

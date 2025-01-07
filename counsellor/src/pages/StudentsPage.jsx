@@ -20,7 +20,7 @@ function StudentsPage() {
    }, [location]);
 
    const { data, isLoading } = useFrappeGetDocList("Student", {
-      fields: ["name","first_name","last_name","education_program"],
+      fields: ["name", "first_name", "last_name", "education_program"],
       filters,
    });
 
@@ -31,7 +31,6 @@ function StudentsPage() {
             onClick={() => navigate(-1)}
          >
             &lt; Go back
-            
          </button>
          <h1 className="text-4xl text-[#0f6990] ">Students List</h1>
          {isLoading ? (

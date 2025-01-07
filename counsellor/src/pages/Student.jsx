@@ -29,6 +29,10 @@ function Student() {
                      Go To Courses
                   </button>
                </div>
+               <h1 className="text-3xl text-center text-red-400 font-semibold">
+                  {data.first_name} {data.last_name} is looking for{" "}
+                  {data.education_program}
+               </h1>
                <div id="personalDetailsCard" className="mb-10">
                   <h2 className="text-3xl lg:text-5xl text-[#0f6990] py-5">
                      Personal Details
@@ -55,13 +59,13 @@ function Student() {
                      <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                         Spouse Visa needed :
                         <span className="text-[#0f6990] ms-1">
-                           {data.availing_spouse_visa}
+                           {data.availing_spouse_visa == 1 ? "Yes" : "No"}
                         </span>
                      </p>
                      <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                         Having kids :
                         <span className="text-[#0f6990] ms-1">
-                           {data.have_kids}
+                           {data.have_kids == 1 ? "Yes" : "No"}
                         </span>
                      </p>
                      <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
@@ -312,12 +316,6 @@ function Student() {
                      </h3>
                      <div className=" text-gray-800 font-medium flex flex-wrap justify-between gap-4 lg:gap-7">
                         <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
-                           Course :
-                           <span className="text-[#0f6990] ms-1">
-                              {data.tenth_course}
-                           </span>
-                        </p>
-                        <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                            Institution :
                            <span className="text-[#0f6990] ms-1">
                               {data.tenth_institution}
@@ -326,7 +324,13 @@ function Student() {
                         <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                            Board :
                            <span className="text-[#0f6990] ms-1">
-                              {data.tenth_board}
+                              {data.tenth_board_of_study}
+                           </span>
+                        </p>
+                        <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
+                           State :
+                           <span className="text-[#0f6990] ms-1">
+                              {data.tenth_state}
                            </span>
                         </p>
                         <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">

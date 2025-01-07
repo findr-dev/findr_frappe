@@ -11,7 +11,7 @@ import Course from "./pages/Course";
 function App() {
    return (
       <>
-         <FrappeProvider>
+         <FrappeProvider>  
             <Navbar />
             <ScrollToTop />
             <Routes>

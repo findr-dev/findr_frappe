@@ -49,9 +49,10 @@ function Course() {
 
          updateDoc("Student", id, {
             course_list: courseListArray,
-            course_added: 1
          })
-            .then(() => toast.success("Course updated"))
+            .then(() => {
+               toast.success("Course updated");
+            })
             .catch((err) => {
                toast.warning("Some internal error");
                console.error(err);
@@ -188,6 +189,7 @@ function Course() {
                                        <div className="w-full py-1">
                                           <label>Scholarship Deadline</label>
                                           <input
+                                             type="date"
                                              {...register(
                                                 "scholarship_deadline"
                                              )}
@@ -206,6 +208,7 @@ function Course() {
                                        <div className="w-full py-1">
                                           <label>Course Deadline</label>
                                           <input
+                                             type="date"
                                              {...register("course_deadline")}
                                              className="border rounded-lg px-2 text-[#0f6990] focus:outline-none p-1 w-full"
                                           />

@@ -488,7 +488,7 @@
    "label": "Currently Studying"
   },
   {
-   "fieldname": "undergraduate_course_name",
+   "fieldname": "undergraduate_course",
    "fieldtype": "Data",
    "label": "Course Name"
   },

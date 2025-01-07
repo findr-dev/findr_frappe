@@ -30,7 +30,7 @@ function Student() {
                   </button>
                </div>
                <h1 className="text-3xl text-center text-red-400 font-semibold">
-                  {data.first_name} {data.last_name} is looking for{" "}
+                  {data.first_name} {data.last_name} is looking for
                   {data.education_program}
                </h1>
                <div id="personalDetailsCard" className="mb-10">
@@ -139,7 +139,7 @@ function Student() {
                            <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                               University :
                               <span className="text-[#0f6990] ms-1">
-                                 {data.phd_board}
+                                 {data.phd_university}
                               </span>
                            </p>
                            <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
@@ -157,7 +157,7 @@ function Student() {
                            <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                               Year of Study :
                               <span className="text-[#0f6990] ms-1">
-                                 {data.phd_year_of_study}
+                                 {data.phd_year}
                               </span>
                            </p>
                         </div>
@@ -188,7 +188,7 @@ function Student() {
                            <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                               Board :
                               <span className="text-[#0f6990] ms-1">
-                                 {data.postgraduate_board}
+                                 {data.postgraduate_university}
                               </span>
                            </p>
                            <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
@@ -206,7 +206,7 @@ function Student() {
                            <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                               Year of Study :
                               <span className="text-[#0f6990] ms-1">
-                                 {data.postgraduate_year_of_study}
+                                 {data.postgraduate_year}
                               </span>
                            </p>
                         </div>
@@ -237,7 +237,7 @@ function Student() {
                            <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                               Board :
                               <span className="text-[#0f6990] ms-1">
-                                 {data.undergraduate_board}
+                                 {data.undergraduate_university}
                               </span>
                            </p>
                            <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
@@ -255,7 +255,7 @@ function Student() {
                            <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                               Year of Study :
                               <span className="text-[#0f6990] ms-1">
-                                 {data.undergraduate_year_of_study}
+                                 {data.undergraduate_year}
                               </span>
                            </p>
                         </div>
@@ -273,7 +273,7 @@ function Student() {
                         <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                            Course :
                            <span className="text-[#0f6990] ms-1">
-                              {data.twelfth_course}
+                              {data.twelfth_stream}
                            </span>
                         </p>
                         <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
@@ -285,7 +285,7 @@ function Student() {
                         <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                            Board :
                            <span className="text-[#0f6990] ms-1">
-                              {data.twelfth_board}
+                              {data.twelfth_board_of_study}
                            </span>
                         </p>
                         <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
@@ -303,7 +303,7 @@ function Student() {
                         <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                            Year of Study :
                            <span className="text-[#0f6990] ms-1">
-                              {data.twelfth_year_of_study}
+                              {data.twelfth_year}
                            </span>
                         </p>
                      </div>
@@ -348,7 +348,7 @@ function Student() {
                         <p className="bg-slate-100 p-4 rounded-lg shadow-md w-full lg:w-[30%]">
                            Year of Study :
                            <span className="text-[#0f6990] ms-1">
-                              {data.tenth_year_of_study}
+                              {data.tenth_year}
                            </span>
                         </p>
                      </div>

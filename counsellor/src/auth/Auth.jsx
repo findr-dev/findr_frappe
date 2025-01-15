@@ -18,9 +18,7 @@ export const AuthComponent = () => {
   if (isLoading) return <div>loading...</div>;
 
   const handleLogin = () => {
-    login({ username: formData.username, password: formData.password })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+    login(formData);
   };
 
   // render user
@@ -45,7 +43,7 @@ export const AuthComponent = () => {
         }
         className="border rounded-lg px-2 text-[#0f6990] focus:outline-none p-1"
       />
-      <button onClick={() => handleLogin}>Login</button>
+      <button onClick={handleLogin}>Login</button>
       <button onClick={logout}>Logout</button>
       <button onClick={updateCurrentUser}>Fetch current user</button>
     </div>

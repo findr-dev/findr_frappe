@@ -11,11 +11,11 @@ function StudentsPage() {
       location.pathname == "/students"
          ? setFilters([
               ["registration_fee", "=", "1"],
-              ["course_added", "=", "1"],
+            //   ["course_added", "=", "1"],
            ])
          : setFilters([
               ["registration_fee", "=", "1"],
-              ["course_added", "=", "0"],
+            //   ["course_added", "=", "0"],
            ]);
    }, [location]);
 
@@ -39,7 +39,7 @@ function StudentsPage() {
             </div>
          ) : (
             <div className="cardLayout mt-8 flex flex-wrap justify-center align-middle gap-6">
-               {data.map((student) => (
+               {data?.map((student) => (
                   <div
                      className="group card w-full lg:w-1/4 rounded-2xl shadow-2xl p-7 cursor-pointer bg-white hover:bg-[#0f6990] transition ease-in-out duration-300"
                      key={student.idx}

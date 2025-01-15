@@ -9,21 +9,21 @@ import ScrollToTop from "./components/ScrollToTop";
 import Course from "./pages/Course";
 
 function App() {
-   return (
-      <>
-         <FrappeProvider>  
-            <Navbar />
-            <ScrollToTop />
-            <Routes>
-               <Route path="/" element={<Dashboard />} />
-               <Route path="/students" element={<StudentsPage />} />
-               <Route path="/students/new" element={<StudentsPage />} />
-               <Route path="/students/:id" element={<Student />} />
-               <Route path="/course/:id" element={<Course />} />
-            </Routes>
-         </FrappeProvider>
-      </>
-   );
+  return (
+    <>
+      <FrappeProvider url="http://findr.localhost:8000" enableSocket={false}>
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/students" element={<StudentsPage />} />
+          <Route path="/students/new" element={<StudentsPage />} />
+          <Route path="/students/:id" element={<Student />} />
+          <Route path="/course/:id" element={<Course />} />
+        </Routes>
+      </FrappeProvider>
+    </>
+  );
 }
 
 export default App;

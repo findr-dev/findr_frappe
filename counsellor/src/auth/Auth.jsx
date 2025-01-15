@@ -18,7 +18,7 @@ export const AuthComponent = () => {
   if (isLoading) return <div>loading...</div>;
 
   const handleLogin = () => {
-    login(formData.username, formData.password)
+    login({ username: formData.username, password: formData.password })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };

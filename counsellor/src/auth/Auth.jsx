@@ -18,7 +18,10 @@ export const AuthComponent = () => {
   if (isLoading) return <div>loading...</div>;
 
   const handleLogin = () => {
-    login(formData);
+    console.log("here");
+    login(formData)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
 
   // render user

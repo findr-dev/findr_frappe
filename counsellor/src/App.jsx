@@ -11,7 +11,7 @@ import Course from "./pages/Course";
 function App() {
   return (
     <>
-      <FrappeProvider url="http://findr.localhost:8000" enableSocket={false}>
+      <FrappeProvider>
         <Navbar />
         <ScrollToTop />
         <Routes>

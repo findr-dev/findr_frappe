@@ -1,14 +1,11 @@
 import Card from "../components/Card";
-import { useFrappeAuth, useFrappeGetDocCount } from "frappe-react-sdk";
+import { useFrappeGetDocCount } from "frappe-react-sdk";
 import { useState } from "react";
-import { AuthComponent } from "../auth/Auth";
 
 function Dashboard() {
   const [newlyPaid, setNewlyPaid] = useState({});
   const [existingStudent, setExistingStudent] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
-  const { currentUser } = useFrappeAuth();
 
   const cards = [
     {
@@ -37,36 +34,30 @@ function Dashboard() {
 
   return (
     <div className="container lg:px-24 px-4 py-24 h-dvh">
-      {currentUser ? (
-        <>
-          <GetNewStudentsCount
-            setNewlyPaid={setNewlyPaid}
-            setIsLoading={setIsLoading}
-          />
-          <GetExisitngStudentsCount
-            setExistingStudent={setExistingStudent}
-            setIsLoading={setIsLoading}
-          />
-          <div className="title">
-            <p className="text-4xl lg:text-5xl  text-[#0f6990]">
-              Welcome back Counsellor
-            </p>
-          </div>
-          {isLoading ? (
-            <div className="h-dvh flex justify-center align-middle">
-              <div className="loader"></div>
-            </div>
-          ) : (
-            <div className="cardLayout flex flex-wrap justify-evenly align-middle gap-8">
-              {/* students list */}
-              {cards.map((card) => (
-                <Card key={card.id} card={card} />
-              ))}
-            </div>
-          )}
-        </>
+      <GetNewStudentsCount
+        setNewlyPaid={setNewlyPaid}
+        setIsLoading={setIsLoading}
+      />
+      <GetExisitngStudentsCount
+        setExistingStudent={setExistingStudent}
+        setIsLoading={setIsLoading}
+      />
+      <div className="title">
+        <p className="text-4xl lg:text-5xl  text-[#0f6990]">
+          Welcome back Counsellor
+        </p>
+      </div>
+      {isLoading ? (
+        <div className="h-dvh flex justify-center align-middle">
+          <div className="loader"></div>
+        </div>
       ) : (
-        <AuthComponent />
+        <div className="cardLayout flex flex-wrap justify-evenly align-middle gap-8">
+          {/* students list */}
+          {cards.map((card) => (
+            <Card key={card.id} card={card} />
+          ))}
+        </div>
       )}
     </div>
   );

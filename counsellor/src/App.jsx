@@ -11,33 +11,26 @@ import Course from "./pages/Course";
 import { useState } from "react";
 
 function App() {
-   const [token, setToken] = useState("");
+  const [token, setToken] = useState("");
 
-   return (
-      <>
-         <FrappeProvider
-            url="https://findrstudy.frappe.cloud"
-            tokenParams={{
-               type: "Bearer",
-               useToken: "true",
-               token: () => token,
-            }}
-         >
-            <Navbar />
-            <ScrollToTop />
-            <Routes>
-               <Route
-                  path="/"
-                  element={<Dashboard token={token} setToken={setToken} />}
-               />
-               <Route path="/students" element={<StudentsPage />} />
-               <Route path="/students/new" element={<StudentsPage />} />
-               <Route path="/students/:id" element={<Student />} />
-               <Route path="/course/:id" element={<Course />} />
-            </Routes>
-         </FrappeProvider>
-      </>
-   );
+  return (
+    <>
+      <FrappeProvider>
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route
+            path="/"
+            element={<Dashboard token={token} setToken={setToken} />}
+          />
+          <Route path="/students" element={<StudentsPage />} />
+          <Route path="/students/new" element={<StudentsPage />} />
+          <Route path="/students/:id" element={<Student />} />
+          <Route path="/course/:id" element={<Course />} />
+        </Routes>
+      </FrappeProvider>
+    </>
+  );
 }
 
 export default App;

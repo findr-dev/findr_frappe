@@ -8,21 +8,14 @@ import Student from "./pages/Student";
 import ScrollToTop from "./components/ScrollToTop";
 import Course from "./pages/Course";
 
-import { useState } from "react";
-
 function App() {
-  const [token, setToken] = useState("");
-
   return (
     <>
       <FrappeProvider>
         <Navbar />
         <ScrollToTop />
         <Routes>
-          <Route
-            path="/"
-            element={<Dashboard token={token} setToken={setToken} />}
-          />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/students/new" element={<StudentsPage />} />
           <Route path="/students/:id" element={<Student />} />

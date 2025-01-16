@@ -69,12 +69,30 @@ function Dashboard() {
         </>
       ) : (
         <div className="h-full flex justify-center items-center">
-          <button
-            className="text-white mt-2 px-5 py-2 shadow-lg rounded-xl bg-[#0f6990]"
-            onClick={() => (location.href = redirectLoginLink)}
-          >
-            Login
-          </button>
+          <div className="card w-full lg:w-2/6 rounded-2xl shadow-2xl p-8 lg:p-12 mt-12 cursor-pointer">
+            <div className="cardHeading">
+              <div className="h-40">
+                <span className="material-symbols-outlined text-green-800 text-9xl text-center flex h-full justify-center align-middle">
+                  tv_signin
+                </span>
+              </div>
+            </div>
+            <div className="cardBody">
+              <div className="cardContent">
+                <div className="cardTitle py-2">
+                  <h2 className="text-2xl text-[#0f6990]">Login to continue</h2>
+                </div>
+              </div>
+              <div className="cardAction flex justify-center">
+                <button
+                  className="text-white mt-2 px-5 py-2 shadow-lg rounded-xl bg-[#0f6990] hover:translate-x hover:scale-105 transition ease-in-out duration-300"
+                  onClick={() => (location.href = redirectLoginLink)}
+                >
+                  Go to Login page
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>

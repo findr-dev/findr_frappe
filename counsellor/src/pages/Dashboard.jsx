@@ -16,55 +16,56 @@ function Dashboard({ token, setToken }) {
    const expiryTime = localStorage.getItem("expires_in");
    const refresh_token = localStorage.getItem("refresh_token");
 
-   useEffect(() => {
-      if (currentTime > expiryTime) {
-         localStorage.removeItem("access_token");
-         getAccessToken();
-      }
-   }, [expiryTime]);
+  //  useEffect(() => {
+  //     if (currentTime > expiryTime) {
+  //        localStorage.removeItem("access_token");
+  //        getAccessToken();
+  //     }
+  //  }, [expiryTime]);
 
    const [searchParams] = useSearchParams();
 
    const getAccessToken = async () => {
-      if (refresh_token) {
-         try {
-            await axios
-               .post(
-                  "https://findrstudy.frappe.cloud/api/method/frappe.integrations.oauth2.get_token",
-                  {
-                     grant_type: "refresh_token",
-                     code: refresh_token,
-                     client_id: "mmcsk8kp8q",
-                     redirect_uri: "https://findrstudy.frappe.cloud/counsellor",
-                  },
-                  {
-                     headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                     },
-                  }
-               )
-               .then((res) => {
-                  if (res.status === 200) {
-                     const expiryTime =
-                        new Date().getTime() + res.data.expires_in;
+      // if (refresh_token) {
+      //    try {
+      //       await axios
+      //          .post(
+      //             "https://findrstudy.frappe.cloud/api/method/frappe.integrations.oauth2.get_token",
+      //             {
+      //                grant_type: "refresh_token",
+      //                code: refresh_token,
+      //                client_id: "mmcsk8kp8q",
+      //                redirect_uri: "https://findrstudy.frappe.cloud/counsellor",
+      //             },
+      //             {
+      //                headers: {
+      //                   "Content-Type": "application/x-www-form-urlencoded",
+      //                },
+      //             }
+      //          )
+      //          .then((res) => {
+      //             if (res.status === 200) {
+      //                const expiryTime =
+      //                   new Date().getTime() + res.data.expires_in;
 
-                     localStorage.setItem("expires_in", expiryTime);
-                     setToken(res.data.access_token);
-                     localStorage.setItem(
-                        "access_token",
-                        res.data.access_token
-                     );
-                     localStorage.setItem(
-                        "refresh_token",
-                        res.data.refresh_token
-                     );
-                  }
-               })
-               .catch((err) => console.error(err));
-         } catch (err) {
-            console.error(err);
-         }
-      } else if (access_token) {
+      //                localStorage.setItem("expires_in", expiryTime);
+      //                setToken(res.data.access_token);
+      //                localStorage.setItem(
+      //                   "access_token",
+      //                   res.data.access_token
+      //                );
+      //                localStorage.setItem(
+      //                   "refresh_token",
+      //                   res.data.refresh_token
+      //                );
+      //             }
+      //          })
+      //          .catch((err) => console.error(err));
+      //    } catch (err) {
+      //       console.error(err);
+      //    }
+      // } else
+       if (access_token) {
          setToken(access_token);
       } else {
          try {

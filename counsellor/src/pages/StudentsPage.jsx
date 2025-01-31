@@ -66,24 +66,24 @@ function StudentsPage() {
               </div>
             </div>
           ))}
+      )}
           <div className="mt-8 flex flex-wrap justify-center align-middle gap-6">
             {pageIndex > 0 && (
               <button
                 onClick={() => setPageIndex(pageIndex - 12)}
-                className="text-white mt-2 px-5 py-2 shadow-lg rounded-xl bg-[#0f6990] hover:translate-x hover:scale-105 transition ease-in-out duration-300"
+                className="text-white mt-2 px-5 py-1 shadow-lg rounded-xl bg-[#0f6990] hover:translate-x hover:scale-105 transition ease-in-out duration-300"
               >
                 Previous
               </button>
             )}
             <button
               onClick={() => setPageIndex(pageIndex + 12)}
-              className="text-white mt-2 px-5 py-2 shadow-lg rounded-xl bg-green-600 hover:translate-x hover:scale-105 transition ease-in-out duration-300"
+              className="text-white mt-2 px-5 py-1 shadow-lg rounded-xl bg-green-600 hover:translate-x hover:scale-105 transition ease-in-out duration-300"
             >
               Next
             </button>
           </div>
         </div>
-      )}
     </div>
   );
 }

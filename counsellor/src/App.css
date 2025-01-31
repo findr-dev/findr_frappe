@@ -17,7 +17,7 @@ body {
 }
 
 .studentSection {
-   height: 100dvh;
+   height: auto;
    width: auto;
    background: linear-gradient(-45deg, #ffffff, #0f699083, #ffffff, #ffffff);
    background-size: 400% 400%;

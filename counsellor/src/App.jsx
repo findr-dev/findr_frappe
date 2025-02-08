@@ -8,6 +8,9 @@ import Student from "./pages/Student";
 import ScrollToTop from "./components/ScrollToTop";
 import Course from "./pages/Course";
 
+import { ToastContainer } from "react-toastify";
+
+
 function App() {
   return (
     <>
@@ -21,6 +24,18 @@ function App() {
           <Route path="/students/:id" element={<Student />} />
           <Route path="/course/:id" element={<Course />} />
         </Routes>
+        <ToastContainer
+               position="top-right"
+               autoClose={3500}
+               hideProgressBar
+               newestOnTop={false}
+               closeOnClick
+               rtl={false}
+               pauseOnFocusLoss
+               draggable
+               pauseOnHover
+               theme="colored"
+        />
       </FrappeProvider>
     </>
   );

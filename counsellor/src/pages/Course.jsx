@@ -14,7 +14,7 @@ import { toast } from "react-toastify";
 function Course() {
    const navigate = useNavigate();
    const { id } = useParams();
-   const { register, handleSubmit } = useForm();
+   const { register, handleSubmit, reset } = useForm();
    const { updateDoc } = useFrappeUpdateDoc();
    const [open, setOpen] = useState(false);
    const [deleteId, setDeleteId] = useState(0);
@@ -53,6 +53,7 @@ function Course() {
          })
             .then(() => {
                toast.success("Course updated");
+               reset();
             })
             .catch((err) => {
                toast.warning("Some internal error");
@@ -68,7 +69,7 @@ function Course() {
       updateDoc("Student", id, {
          course_list: newCourseList,
       })
-         .then(() => toast.success("Course removed"))
+         .then(() => toast.error("Course removed"))
          .catch((err) => {
             toast.warning("Some internal error");
             console.error(err);

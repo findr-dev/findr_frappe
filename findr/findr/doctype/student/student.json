@@ -40,7 +40,6 @@
   "undergraduate_section",
   "undergraduation_column",
   "undergraduate_currently_studying",
-  "undergraduate_course_name",
   "undergraduate_institution",
   "undergraduate_university",
   "undergraduate_marks",
@@ -106,7 +105,8 @@
   "consultancy_name",
   "column_break_hvaa",
   "consultancy_address",
-  "consultancy_number"
+  "consultancy_number",
+  "undergraduate_course"
  ],
  "fields": [
   {
@@ -645,7 +645,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-07 23:57:39.738978",
+ "modified": "2025-02-08 21:18:32.760282",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",
@@ -685,6 +685,18 @@
    "read": 1,
    "report": 1,
    "role": "Counsellor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
    "share": 1,
    "write": 1
   }

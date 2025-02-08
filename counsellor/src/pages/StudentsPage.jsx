@@ -25,6 +25,10 @@ function StudentsPage() {
     filters,
     limit_start: pageIndex,
     limit: 18,
+    orderBy:{
+      field:"modified",
+      order:"asc"
+   }
   });
 
   return (

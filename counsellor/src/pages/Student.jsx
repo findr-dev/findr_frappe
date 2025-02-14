@@ -30,7 +30,7 @@ function Student() {
             </button>
           </div>
           <h1 className="text-3xl text-center text-red-400 font-semibold">
-            {data.first_name} {data.last_name} is looking for
+            {data.first_name} {data.last_name} is looking for{" "}
             {data.education_program}
           </h1>
           <div id="personalDetailsCard" className="mb-10">

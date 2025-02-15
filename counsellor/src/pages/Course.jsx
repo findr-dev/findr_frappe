@@ -85,6 +85,7 @@ function Course() {
             onClick={() => {
               setOpen(true);
               setIsEdit(false);
+              reset();
             }}
           >
             Add Course

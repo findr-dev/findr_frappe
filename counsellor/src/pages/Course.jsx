@@ -68,20 +68,25 @@ function Course() {
 
    const handlePrevious = () => {
       if (currentIndex != null) {
-         if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
+         if (currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+            setEditId(currentIndex - 1);
+         }
       } else if (data.course_list.length > 0)
          setCurrentIndex(data.course_list.length - 1);
    };
 
    const handleNext = () => {
       if (currentIndex != null) {
-         if (currentIndex < data.course_list.length)
+         if (currentIndex < data.course_list.length) {
             setCurrentIndex(currentIndex + 1);
+            setEditId(currentIndex + 1);
+         }
       }
    };
 
    useEffect(() => {
-      if (currentIndex == null) setCurrentIndex(data.course_list.length);
+      if (currentIndex === null) setCurrentIndex(data?.course_list.length);
       else if (data && currentIndex < data?.course_list.length) {
          setEditValue(data?.course_list[currentIndex]);
       } else {
@@ -106,6 +111,7 @@ function Course() {
       setValue("scholarship", course.scholarship);
       setValue("scholarship_deadline", course.scholarship_deadline);
       setValue("how_to", course.how_to);
+      setValue("tution_fee", course.tution_fee);
       setValue("scholarship_2", course.scholarship_2);
       setValue("scholarship_2_deadline", course.scholarship_2_deadline);
       setValue("scholarship_2_link", course.scholarship_2_link);
@@ -154,7 +160,7 @@ function Course() {
                      </thead>
                      <tbody className=" text-[#0f6990]">
                         {data.course_list.map((course, index) => (
-                           <tr key={course.idx}>
+                           <tr key={index}>
                               <td className="py-1">{course.course_name}</td>
                               <td className="py-1">{course.university}</td>
                               <td className="py-1 flex justify-evenly">
@@ -194,7 +200,7 @@ function Course() {
                         className="relative transform rounded-lg w-full lg:w-1/2 bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
                      >
                         <button
-                           className="absolute text-slate-800 bg-slate-400 hover:bg-slate-200 hover:text-black rounded-[50%] transition duration-300 flex p-2 -left-32 top-1/2"
+                           className="absolute text-slate-800 hover:bg-slate-100 hover:text-black rounded-[50%] transition duration-300 flex p-2 -left-32 top-1/2"
                            onClick={handlePrevious}
                         >
                            <span className="material-symbols-outlined text-5xl">
@@ -202,7 +208,7 @@ function Course() {
                            </span>
                         </button>
                         <button
-                           className="absolute text-slate-800 bg-slate-400 hover:bg-slate-200 hover:text-black rounded-[50%] transition duration-300 flex p-2 -right-32 top-1/2"
+                           className="absolute text-slate-800 hover:bg-slate-100 hover:text-black rounded-[50%] transition duration-300 flex p-2 -right-32 top-1/2"
                            onClick={handleNext}
                         >
                            <span className="material-symbols-outlined text-5xl">
@@ -235,6 +241,14 @@ function Course() {
                                              <label>Country</label>
                                              <input
                                                 {...register("country")}
+                                                className="border rounded-lg px-2 py-1 text-[#0f6990] focus:outline-none w-full"
+                                             />
+                                          </div>
+
+                                          <div>
+                                             <label>Tution Fee</label>
+                                             <input
+                                                {...register("tution_fee")}
                                                 className="border rounded-lg px-2 py-1 text-[#0f6990] focus:outline-none w-full"
                                              />
                                           </div>
@@ -449,3 +463,4 @@ function Course() {
 }
 
 export default Course;
+   

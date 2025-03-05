@@ -61,6 +61,8 @@
   "phd_marks",
   "phd_mode_of_study",
   "phd_year",
+  "additional_course_section",
+  "additional_course",
   "languages_section",
   "language_proficiency",
   "column_break_wrgk",
@@ -641,11 +643,22 @@
    "fieldname": "postgraduate_course",
    "fieldtype": "Data",
    "label": "Course Name"
+  },
+  {
+   "fieldname": "additional_course_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Course"
+  },
+  {
+   "fieldname": "additional_course",
+   "fieldtype": "Table",
+   "label": "Additional Course",
+   "options": "Additional Course"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-08 21:18:32.760282",
+ "modified": "2025-03-05 11:25:44.220046",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",

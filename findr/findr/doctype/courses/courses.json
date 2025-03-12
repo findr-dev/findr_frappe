@@ -5,13 +5,16 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "section_break_bhnl",
+  "status",
   "course_name",
   "course_link",
   "course_deadline",
   "country",
   "university",
   "tution_fee",
-  "section_break_skdc",
+  "review",
+  "column_break_ykha",
   "scholarship",
   "scholarship_deadline",
   "how_to",
@@ -33,7 +36,8 @@
    "fieldname": "university",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "University"
+   "label": "University",
+   "max_height": "28px"
   },
   {
    "fieldname": "country",
@@ -46,13 +50,15 @@
    "fieldname": "scholarship",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Scholarship 1"
+   "label": "Scholarship 1",
+   "max_height": "28px"
   },
   {
    "fieldname": "course_link",
    "fieldtype": "Long Text",
    "in_list_view": 1,
-   "label": "Course Link"
+   "label": "Course Link",
+   "max_height": "28px"
   },
   {
    "fieldname": "course_deadline",
@@ -67,37 +73,42 @@
   {
    "fieldname": "scholarship_2",
    "fieldtype": "Small Text",
-   "label": "Scholarship 2"
+   "label": "Scholarship 2",
+   "max_height": "28px"
   },
   {
    "fieldname": "scholarship_2_deadline",
-   "fieldtype": "Date",
+   "fieldtype": "Data",
    "label": "Scholarship 2 Deadline"
   },
   {
    "fieldname": "scholarship_2_link",
    "fieldtype": "Long Text",
-   "label": "Scholarship 2 Link"
+   "label": "Scholarship 2 Link",
+   "max_height": "28px"
   },
   {
    "fieldname": "scholarship_3",
    "fieldtype": "Small Text",
-   "label": "Scholarship 3"
+   "label": "Scholarship 3",
+   "max_height": "28px"
   },
   {
    "fieldname": "scholarship_3_deadline",
-   "fieldtype": "Date",
+   "fieldtype": "Data",
    "label": "Scholarship 3 Deadline"
   },
   {
    "fieldname": "scholarship_3_link",
    "fieldtype": "Long Text",
-   "label": "Scholarship 3 Link"
+   "label": "Scholarship 3 Link",
+   "max_height": "28px"
   },
   {
    "fieldname": "how_to",
    "fieldtype": "Long Text",
-   "label": "Scholarship 1 Link"
+   "label": "Scholarship 1 Link",
+   "max_height": "28px"
   },
   {
    "fieldname": "tution_fee",
@@ -105,14 +116,31 @@
    "label": "Tution Fee"
   },
   {
-   "fieldname": "section_break_skdc",
+   "fieldname": "column_break_ykha",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_bhnl",
    "fieldtype": "Section Break"
+  },
+  {
+   "default": "New",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "New\nReview\nApproved"
+  },
+  {
+   "fieldname": "review",
+   "fieldtype": "Small Text",
+   "label": "Review",
+   "max_height": "100px"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-05 22:55:18.057772",
+ "modified": "2025-03-09 16:52:14.442951",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Courses",

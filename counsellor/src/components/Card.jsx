@@ -5,11 +5,9 @@ function Card({ card }) {
    const { id, image, title, description, location } = card;
 
    return (
-      <div className="card w-full lg:w-2/6 rounded-2xl shadow-2xl p-8 lg:p-12 mt-12 cursor-pointer hover:translate-x hover:scale-105 transition ease-in-out duration-300">
+      <div className="card w-full lg:w-[30%] rounded-2xl shadow-xl p-8 lg:p-12 mt-12 cursor-pointer hover:translate-x hover:scale-105 transition ease-in-out duration-300">
          <div className="cardHeading">
-            <div className="h-40">
-               {image}
-            </div>
+            <div className="h-40">{image}</div>
          </div>
          <div className="cardBody">
             <div className="cardContent">

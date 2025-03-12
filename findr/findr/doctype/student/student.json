@@ -7,6 +7,7 @@
  "field_order": [
   "student_details_section",
   "naming_series",
+  "status",
   "first_name",
   "last_name",
   "address",
@@ -100,6 +101,7 @@
   "course_fee_id",
   "course_list_tab",
   "course_added",
+  "section_break_kiuc",
   "course_list",
   "tab_9_tab",
   "consultancy_opted",
@@ -611,8 +613,8 @@
    "default": "0",
    "fieldname": "course_added",
    "fieldtype": "Check",
-   "hidden": 1,
-   "label": "Course added"
+   "label": "Course added",
+   "permlevel": 1
   },
   {
    "fieldname": "tenth_year",
@@ -654,11 +656,24 @@
    "fieldtype": "Table",
    "label": "Additional Course",
    "options": "Additional Course"
+  },
+  {
+   "fieldname": "section_break_kiuc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Status",
+   "options": "New\nAssigned\nAuditing\nReview\nHold\nCourse Given\nFeedback Review",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-05 11:25:44.220046",
+ "modified": "2025-03-12 13:37:24.491824",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",
@@ -710,6 +725,30 @@
    "read": 1,
    "report": 1,
    "role": "Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor",
    "share": 1,
    "write": 1
   }

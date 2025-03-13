@@ -142,12 +142,6 @@ function Dashboard() {
                     )
                 )}
               </div>
-              <button
-                className="text-lg shadow py-2 px-4 rounded-2xl hover:scale-110 bg-[#0f6990] text-white transition ease-in-out duration-300"
-                onClick={check}
-              >
-                Create Student
-              </button>
             </>
           )}
         </>

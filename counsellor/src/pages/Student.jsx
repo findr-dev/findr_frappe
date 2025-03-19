@@ -188,7 +188,7 @@ function Student() {
    };
 
    return (
-      <div className="container lg:px-10 py-24">
+      <div className="lg:px-10 py-24">
          <div id="cardSection" className="px-4 lg:mx-16">
             <div className="flex justify-between">
                <button

@@ -286,7 +286,7 @@ function Course() {
 
   return (
     <>
-      <div className="container lg:px-26 py-24">
+      <div className="lg:px-26 py-24">
         <div className="lg:mx-16 px-4">
           <div className="flex justify-between">
             <button

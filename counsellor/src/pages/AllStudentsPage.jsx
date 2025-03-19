@@ -23,7 +23,7 @@ function AllStudentsPage() {
 
    return (
       <>
-         <div className="studentSection container lg:px-24 px-4 py-24">
+         <div className="studentSection lg:px-24 px-4 py-24">
             <button
                className="text-[#0f6990] text-lg shadow py-2 px-4 rounded-2xl hover:scale-110 hover:bg-[#0f6990] hover:text-white transition ease-in-out duration-300"
                onClick={() => navigate(-1)}

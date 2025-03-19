@@ -174,7 +174,7 @@ function Dashboard() {
   }, [data]);
 
   return (
-    <div className="container lg:px-24 px-4 py-24 h-dvh">
+    <div className="lg:px-24 px-4 py-24 h-dvh">
       {currentUser ? (
         <>
           <div className="title flex justify-between">

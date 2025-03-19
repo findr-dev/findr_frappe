@@ -1,7 +1,7 @@
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
 import { useRole } from "../context/RoleContext";
-import { useFrappeAuth } from "frappe-react-sdk";
+import { useFrappeAuth, useFrappeGetDocCount, useFrappeGetDocList } from "frappe-react-sdk";
 
 function Dashboard() {
   const { roleProfile, userName } = useRole();

@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import findr_logo from "../assets/logo3.png";
 import { useFrappeAuth } from "frappe-react-sdk";
+import { toast } from "react-toastify";
 
 function Navbar() {
   const navigate = useNavigate();
-  const { logout, updateCurrentUser } = useFrappeAuth();
+  const { logout } = useFrappeAuth();
   return (
     <div className="px-8 py-3 backdrop-blur fixed w-full">
       <div className="flex justify-between">
@@ -13,7 +14,12 @@ function Navbar() {
         </button>
         <button
           className="text-lg shadow py-2 px-4 rounded-2xl hover:scale-90 bg-[#0f6990] text-white transition ease-in-out duration-300"
-          onClick={logout}
+          onClick={() =>
+            logout().then(() => {
+              toast.success("Logging out");
+              navigate("/");
+            })
+          }
         >
           Logout
         </button>

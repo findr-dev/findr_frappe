@@ -7,6 +7,14 @@ function Dashboard() {
   const { roleProfile, userName } = useRole();
   const [isLoading, setIsLoading] = useState(true);
   const { currentUser, logout } = useFrappeAuth();
+  const [totalRegistered, setTotalRegistered] = useState(0);
+  const [totalCourseGiven, setTotalCourseGiven] = useState(0);
+  const [totalOnHold, setTotalOnHold] = useState(0);
+  const [totalOnAuditing, setTotalOnAuditing] = useState(0);
+  const [totalOnReview, setTotalOnReview] = useState(0);
+  const [totalNew, setTotalNew] = useState(0);
+  const [totalOnAssigned, setTotalOnAssigned] = useState(0);
+  const [totalOnFeedback, setTotalOnFeedback] = useState(0);
 
   useEffect(() => {
     if (roleProfile) setIsLoading(false);
@@ -118,14 +126,104 @@ function Dashboard() {
     },
   ];
 
+  const studentCount = useFrappeGetDocCount("Student", [
+    ["registration_fee", "=", "1"],
+  ]);
+
+  const { data } = useFrappeGetDocList("Student", {
+    fields: ["name", "status"],
+    filters: [["registration_fee", "=", "1"]],
+    limit: studentCount.data ? studentCount.data : 20,
+  });
+
+  useEffect(() => {
+    if (data) {
+      setTotalRegistered(studentCount.data);
+      let feedbacks = [];
+      let courseGiven = [];
+      let onHold = [];
+      let onAuditing = [];
+      let onReview = [];
+      let newStudents = [];
+      let assigned = [];
+      data.map((item) => {
+        if (item.status == "New") {
+          newStudents.push(item);
+        } else if (item.status == "Assigned") {
+          assigned.push(item);
+        } else if (item.status == "Hold") {
+          onHold.push(item);
+        } else if (item.status == "Auditing") {
+          onAuditing.push(item);
+        } else if (item.status == "Review") {
+          onReview.push(item);
+        } else if (item.status == "Feedback Review") {
+          feedbacks.push(item);
+        } else if (item.status == "Course Given") {
+          courseGiven.push(item);
+        }
+      });
+      setTotalNew(newStudents.length);
+      setTotalOnAssigned(assigned.length);
+      setTotalOnHold(onHold.length);
+      setTotalOnAuditing(onAuditing.length);
+      setTotalOnReview(onReview.length);
+      setTotalOnFeedback(feedbacks.length);
+      setTotalCourseGiven(courseGiven.length);
+    }
+  }, [data]);
+
   return (
     <div className="container lg:px-24 px-4 py-24 h-dvh">
       {currentUser ? (
         <>
-          <div className="title">
+          <div className="title flex justify-between">
             <p className="text-4xl lg:text-5xl  text-[#0f6990]">
               Welcome back {userName}
             </p>
+            <div className="text-slate-700 absolute lg:flex bg-slate-200 p-4 rounded-xl left-1/2 -translate-x-1/2 gap-3 bottom-6 hidden ">
+              <div>
+                <p>
+                  New: <span className="text-[#0f6990]">{totalNew}</span>
+                </p>
+                <p>
+                  On hold: <span className="text-[#0f6990]">{totalOnHold}</span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  Assigned:{" "}
+                  <span className="text-[#0f6990]">{totalOnAssigned}</span>
+                </p>
+                <p>
+                  Auditing:{" "}
+                  <span className="text-[#0f6990]">{totalOnAuditing}</span>
+                </p>
+              </div>
+
+              <div>
+                <p>
+                  Feedbacks:{" "}
+                  <span className="text-[#0f6990]">{totalOnFeedback}</span>
+                </p>
+                <p>
+                  Reviewing:{" "}
+                  <span className="text-[#0f6990]">{totalOnReview}</span>
+                </p>
+              </div>
+              {roleProfile == "Master Auditor" && (
+                <div>
+                  <p>
+                    Course Given:{" "}
+                    <span className="text-[#0f6990]">{totalCourseGiven}</span>
+                  </p>
+                  <p>
+                    Total Students:{" "}
+                    <span className="text-[#0f6990]">{totalRegistered}</span>
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
           {isLoading ? (
             <div className="h-dvh flex justify-center align-middle">

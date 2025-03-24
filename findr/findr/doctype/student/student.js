@@ -4,7 +4,6 @@
 frappe.ui.form.on("Student", {
 	refresh: async function(frm) {
         frm.add_custom_button(__("Add Courses"), function () {
-            console.log("hello");
             frm.trigger("add_courses");
           });   
           let courses = frm.doc.course_list || [];

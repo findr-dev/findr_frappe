@@ -142,7 +142,9 @@
    "fieldname": "password",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "Password"
+   "label": "Password",
+   "print_hide": 1,
+   "report_hide": 1
   },
   {
    "fieldname": "qualification_tab",
@@ -673,7 +675,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-13 19:00:11.473064",
+ "modified": "2025-03-24 11:08:16.602077",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",
@@ -755,5 +757,6 @@
  ],
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

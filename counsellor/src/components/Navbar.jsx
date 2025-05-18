@@ -10,7 +10,7 @@ function Navbar() {
     <div className="px-8 py-3 backdrop-blur fixed w-full">
       <div className="flex justify-between">
         <button onClick={() => navigate("/")}>
-          <img src={findr_logo} alt="Findr Logo" className="h-14" />
+          {/* <img src={findr_logo} alt="Findr Logo" className="h-14" /> */}
         </button>
         <button
           className="text-lg shadow py-2 px-4 rounded-2xl hover:scale-90 bg-[#0f6990] text-white transition ease-in-out duration-300"

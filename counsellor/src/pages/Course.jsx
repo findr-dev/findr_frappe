@@ -54,7 +54,7 @@ function Course() {
           reference_type: "Student",
           reference_name: id,
           description: `Courses added by ${currentUser}`,
-          priority: "Low",
+          priority: "Medium",
         }).catch((err) => console.error(err));
       }
     }

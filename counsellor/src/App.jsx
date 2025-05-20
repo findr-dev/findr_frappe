@@ -15,45 +15,49 @@ import StudentsReviewPage from "./pages/StudentsReviewPage";
 import StudentsCourseGiven from "./pages/StudentsCourseGiven";
 import StudentFeedBackReview from "./pages/StudentFeedBackReview";
 
-
 function App() {
   return (
     <>
-      <FrappeProvider>
-      <RoleProvider>
-               <Navbar />
-               <ScrollToTop />
-               <Routes>
-                  <Route path="/" element={<Dashboard />} />
-                  <Route path="/students" element={<AllStudentsPage />} />
-                  <Route path="/students/new" element={<NewStudentsPage />} />
-                  <Route
-                     path="/students/review"
-                     element={<StudentsReviewPage />}
-                  />
-                  <Route
-                     path="/students/course-given"
-                     element={<StudentsCourseGiven />}
-                  />
-                  <Route
-                     path="/students/feedback-review"
-                     element={<StudentFeedBackReview />}
-                  />
-                  <Route path="/students/:id" element={<Student />} />
-                  <Route path="/course/:id" element={<Course />} />
-               </Routes>
-            </RoleProvider>
+      <FrappeProvider
+      //   url="http://127.0.0.1:8000"
+      //   enableSocket={false}
+      //   tokenParams={{
+      //     useToken: "true",
+      //     type: "token",
+      //     token: () => "9b3b139dfd782d3:658888b185ca3db",
+      //   }}
+      >
+        <RoleProvider>
+          <Navbar />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/students" element={<AllStudentsPage />} />
+            <Route path="/students/new" element={<NewStudentsPage />} />
+            <Route path="/students/review" element={<StudentsReviewPage />} />
+            <Route
+              path="/students/course-given"
+              element={<StudentsCourseGiven />}
+            />
+            <Route
+              path="/students/feedback-review"
+              element={<StudentFeedBackReview />}
+            />
+            <Route path="/students/:id" element={<Student />} />
+            <Route path="/course/:id" element={<Course />} />
+          </Routes>
+        </RoleProvider>
         <ToastContainer
-               position="top-right"
-               autoClose={3500}
-               hideProgressBar
-               newestOnTop={false}
-               closeOnClick
-               rtl={false}
-               pauseOnFocusLoss
-               draggable
-               pauseOnHover
-               theme="colored"
+          position="top-right"
+          autoClose={3500}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
         />
       </FrappeProvider>
     </>

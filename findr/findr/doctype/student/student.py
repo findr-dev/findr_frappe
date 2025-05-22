@@ -12,34 +12,34 @@ from frappe.utils.data import cstr
 
 
 
-@frappe.whitelist(allow_guest=True)  # Allow API calls from React frontend
-def verify_student_login(email, entered_password):
-    """Authenticate student using email and password"""
-    student = frappe.db.get_value("Student", {"email": email}, ["name", "password"], as_dict=True)
+# @frappe.whitelist(allow_guest=True)  # Allow API calls from React frontend
+# def verify_student_login(email, entered_password):
+#     """Authenticate student using email and password"""
+#     student = frappe.db.get_value("Student", {"email": email}, ["name", "password"], as_dict=True)
 
-    if not student:
-        return{"status": "404", "message": "Account not found"}
+#     if not student:
+#         return{"status": "404", "message": "Account not found"}
 
-    stored_hash = student.password.encode("utf-8")
-    entered_password = entered_password.encode("utf-8")
+#     stored_hash = student.password.encode("utf-8")
+#     entered_password = entered_password.encode("utf-8")
 
-    if bcrypt.checkpw(entered_password, stored_hash):
-        salt = stored_hash[:29].decode("utf-8")
-        return {"status": "200", "message": "Login successful", "student_id": student.name, "salt": salt }
-    else:
-        return{"status": "401", "message": "Invalid credentials"}
+#     if bcrypt.checkpw(entered_password, stored_hash):
+#         salt = stored_hash[:29].decode("utf-8")
+#         return {"status": "200", "message": "Login successful", "student_id": student.name, "salt": salt }
+#     else:
+#         return{"status": "401", "message": "Invalid credentials"}
 
 
 class Student(Document):
-    def validate(self):
-        """Hash the password before saving the Student document"""
-        if self.password and not self.password.startswith("$2b$"):  # Prevent double hashing
-            self.password = self.hash_password(self.password)
+    # def validate(self):
+    #     """Hash the password before saving the Student document"""
+    #     if self.password and not self.password.startswith("$2b$"):  # Prevent double hashing
+    #         self.password = self.hash_password(self.password)
 
-    def hash_password(self, password):
-        """Generate bcrypt hash for the password"""
-        salt = bcrypt.gensalt()
-        return bcrypt.hashpw(password.encode("utf-8"), salt).decode("utf-8")
+    # def hash_password(self, password):
+    #     """Generate bcrypt hash for the password"""
+    #     salt = bcrypt.gensalt()
+    #     return bcrypt.hashpw(password.encode("utf-8"), salt).decode("utf-8")
 
     @frappe.whitelist()
     def add_courses(self, course_name, university, country, scholarship, deadline=None, course_link=None):

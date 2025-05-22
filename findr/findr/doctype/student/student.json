@@ -96,9 +96,11 @@
   "payments_tab",
   "registration_fee",
   "registration_fee_id",
+  "register_payment_date",
   "column_break_ujyu",
   "course_fee",
   "course_fee_id",
+  "course_payment_date",
   "course_list_tab",
   "course_added",
   "section_break_kiuc",
@@ -671,11 +673,21 @@
    "in_preview": 1,
    "label": "Status",
    "options": "New\nAssigned\nAuditing\nReview\nHold\nCourse Given\nFeedback Review"
+  },
+  {
+   "fieldname": "register_payment_date",
+   "fieldtype": "Data",
+   "label": "Register payment date"
+  },
+  {
+   "fieldname": "course_payment_date",
+   "fieldtype": "Data",
+   "label": "Course payment date"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-24 11:08:16.602077",
+ "modified": "2025-05-22 13:50:40.241439",
  "modified_by": "Administrator",
  "module": "Findr",
  "name": "Student",
@@ -755,6 +767,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

@@ -5,16 +5,16 @@ function Card({ card }) {
    const { id, image, title, description, location } = card;
 
    return (
-      <div className="card w-full lg:w-[30%] rounded-2xl shadow-xl p-8 lg:p-12 mt-12 cursor-pointer hover:translate-x hover:scale-105 transition ease-in-out duration-300">
+      <div className="card w-full lg:w-[22%] rounded-2xl shadow-xl p-8 lg:p-8 mt-12 cursor-pointer hover:translate-x hover:scale-105 transition ease-in-out duration-300">
          <div className="cardHeading">
-            <div className="h-40">{image}</div>
+            <div className="h-20">{image}</div>
          </div>
          <div className="cardBody">
             <div className="cardContent">
                <div className="cardTitle py-2">
-                  <h2 className="text-2xl text-[#0f6990]">{title}</h2>
+                  <h2 className="text-2xl text-center text-[#0f6990]">{title}</h2>
                </div>
-               <p className="text-slate-500 py-2">{description}</p>
+               <p className="text-slate-500 py-2 min-h-16">{description}</p>
             </div>
             <div className="cardAction flex justify-center">
                <button

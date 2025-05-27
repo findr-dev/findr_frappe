@@ -1,7 +1,11 @@
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
 import { useRole } from "../context/RoleContext";
-import { useFrappeAuth, useFrappeGetDocCount, useFrappeGetDocList } from "frappe-react-sdk";
+import {
+  useFrappeAuth,
+  useFrappeGetDocCount,
+  useFrappeGetDocList,
+} from "frappe-react-sdk";
 
 function Dashboard() {
   const { roleProfile, userName } = useRole();
@@ -67,6 +71,18 @@ function Dashboard() {
     {
       id: "4",
       image: (
+        <span className="material-symbols-outlined text-green-800 text-8xl text-center flex h-full justify-center align-middle">
+          person_add
+        </span>
+      ),
+      title: "Course Given",
+      description: `Course Given students list`,
+      location: "students/course-given",
+      role: "Auditor",
+    },
+    {
+      id: "5",
+      image: (
         <span className="material-symbols-outlined text-green-800 text-8xl text-center flex h-full justify-center items-center">
           person_add
         </span>
@@ -77,7 +93,7 @@ function Dashboard() {
       role: "Counsellor",
     },
     {
-      id: "5",
+      id: "6",
       image: (
         <span className="material-symbols-outlined text-green-800 text-8xl text-center flex h-full justify-center items-center">
           pending_actions
@@ -89,7 +105,7 @@ function Dashboard() {
       role: "Counsellor",
     },
     {
-      id: "6",
+      id: "7",
       image: (
         <span className="material-symbols-outlined text-green-800 text-8xl text-center flex h-full justify-center items-center">
           groups
@@ -101,7 +117,7 @@ function Dashboard() {
       role: "Master Auditor",
     },
     {
-      id: "7",
+      id: "8",
       image: (
         <span className="material-symbols-outlined text-green-800 text-8xl text-center flex h-full justify-center items-center">
           flag_2
@@ -112,8 +128,9 @@ function Dashboard() {
       location: "students/review",
       role: "Master Auditor",
     },
+
     {
-      id: "8",
+      id: "9",
       image: (
         <span className="material-symbols-outlined text-green-800 text-8xl text-center flex h-full justify-center align-middle">
           person_add
@@ -131,10 +148,12 @@ function Dashboard() {
   ]);
 
   const { data } = useFrappeGetDocList("Student", {
-    fields: ["name", "status"],
+    fields: ["name", "status", "course_added"],
     filters: [["registration_fee", "=", "1"]],
     limit: studentCount.data ? studentCount.data : 20,
   });
+
+  console.log(data);
 
   useEffect(() => {
     if (data) {
@@ -147,6 +166,9 @@ function Dashboard() {
       let newStudents = [];
       let assigned = [];
       data.map((item) => {
+        if (item.course_added === 1) {
+          courseGiven.push(item);
+        }
         if (item.status == "New") {
           newStudents.push(item);
         } else if (item.status == "Assigned") {
@@ -159,8 +181,6 @@ function Dashboard() {
           onReview.push(item);
         } else if (item.status == "Feedback Review") {
           feedbacks.push(item);
-        } else if (item.status == "Course Given") {
-          courseGiven.push(item);
         }
       });
       setTotalNew(newStudents.length);
@@ -174,7 +194,7 @@ function Dashboard() {
   }, [data]);
 
   return (
-    <div className="lg:px-24 px-4 py-24 h-dvh">
+    <div className="lg:px-20 px-4 py-24 h-dvh">
       {currentUser ? (
         <>
           <div className="title flex justify-between">
@@ -203,26 +223,26 @@ function Dashboard() {
 
               <div>
                 <p>
-                  Feedbacks:{" "}
+                  Feedback:{" "}
                   <span className="text-[#0f6990]">{totalOnFeedback}</span>
                 </p>
                 <p>
-                  Reviewing:{" "}
+                  Review:{" "}
                   <span className="text-[#0f6990]">{totalOnReview}</span>
                 </p>
               </div>
-              {roleProfile == "Master Auditor" && (
-                <div>
-                  <p>
-                    Course Given:{" "}
-                    <span className="text-[#0f6990]">{totalCourseGiven}</span>
-                  </p>
+              <div>
+                <p>
+                  Completed:{" "}
+                  <span className="text-[#0f6990]">{totalCourseGiven}</span>
+                </p>
+                {roleProfile == "Master Auditor" && (
                   <p>
                     Total Students:{" "}
                     <span className="text-[#0f6990]">{totalRegistered}</span>
                   </p>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>
           {isLoading ? (
